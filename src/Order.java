@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 public class Order {
-    private OrderDate date;
+    private OrderDate date = new OrderDate();
     private String userName;
     private String orderStatus;
-    private Address shippingAddress;
-    private Address billingAddress;
+    private Address shippingAddress = new Address();
+    private Address billingAddress = new Address();
     private ArrayList<CartItem> items;
     private double orderPrice;
 
