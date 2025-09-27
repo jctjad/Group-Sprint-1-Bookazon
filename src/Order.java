@@ -28,11 +28,11 @@ public class Order {
     }
 
     public void setDateCreated(String date) {
-        this.dateCreated = date;
+        this.dateCreated.setDate(date);
     }
 
     public void setDateShipped(String date) {
-        this.dateShipped = date;
+        this.dateShipped.setDate(date);
     }
 
     public void setUserName(String name) {
