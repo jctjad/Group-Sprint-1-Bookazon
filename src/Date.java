@@ -4,4 +4,8 @@ public class Date{
     public void setDate(String date){
         this.date = date;
     }
+
+    public void printDate(){
+        System.out.println(this.date);
+    }
 }
