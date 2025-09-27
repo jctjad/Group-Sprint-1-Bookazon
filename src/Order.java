@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 
 public class Order {
-    private Date dateCreated;
-    private Date dateShipped;
+    private OrderDate date;
     private String userName;
     private String orderStatus;
     private Address shippingAddress;
@@ -28,11 +27,11 @@ public class Order {
     }
 
     public void setDateCreated(String date) {
-        this.dateCreated.setDate(date);
+        this.date.setDateCreated(date);
     }
 
     public void setDateShipped(String date) {
-        this.dateShipped.setDate(date);
+        this.date.setDateShipped(date);
     }
 
     public void setUserName(String name) {
@@ -41,8 +40,7 @@ public class Order {
 
     public void printOrderDetails() {
         System.out.println("Order Details:");
-        System.out.println("Date Created: " + dateCreated);
-        System.out.println("Date Shipped: " + dateShipped);
+        this.date.printDate();
         System.out.println("User Name: " + userName);
         System.out.println("Order Status: " + orderStatus);
         this.shippingAddress.printAddressDetails();
