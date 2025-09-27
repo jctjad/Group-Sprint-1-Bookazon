@@ -14,5 +14,10 @@ public class Address {
         this.addressZip = zip;
         this.addressCountry = country;
     }
+
+    public void printAddressDetails(){
+        System.out.println("Shipping Address: " + addressLine1 + ", " + addressLine2 + ", " + addressCity + ", " 
+                            + addressState + ", " + addressZip + ", " + addressCountry);
+    }
     
 }
