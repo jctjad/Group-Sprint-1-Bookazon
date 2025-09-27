@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Order {
-    private String dateCreated;
-    private String dateShipped;
+    private Date dateCreated;
+    private Date dateShipped;
     private String userName;
     private String orderStatus;
     private Address shippingAddress;
