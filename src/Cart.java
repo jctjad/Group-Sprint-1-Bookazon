@@ -30,6 +30,7 @@ public class Cart {
         System.out.println("\n");
     }
     
+    //Helper Method
     public void itemDetails(CartItem item){
         System.out.println(item.getName() + " - Quantity: " + item.getQuantity());
     } 
