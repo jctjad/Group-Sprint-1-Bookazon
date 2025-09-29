@@ -2,16 +2,17 @@ import java.util.ArrayList;
 
 public class Order {
     private OrderDate date = new OrderDate();
-    private String userName;
+    private User userName;
     private String orderStatus;
     private Address shippingAddress = new Address("Shipping");
     private Address billingAddress = new Address("Billing");
     private ArrayList<CartItem> items;
     private double orderPrice;
 
-    public Order(Cart cart, String subscription) {
+    public Order(Cart cart, User userName) {
         this.items = cart.getItems();
-        this.orderPrice = calculatePrice(subscription);
+        this.userName = userName;
+        this.orderPrice = calculatePrice(userName.getSubscription());
     }
 
     public void setShippingAddress(String line1, String line2, String city, String state, String zip, String country) {
@@ -34,34 +35,24 @@ public class Order {
         this.date.setDateShipped(date);
     }
 
-    public void setUserName(String name) {
-        this.userName = name;
-    }
-
     public void printOrderDetails() {
         System.out.println("Order Details:");
         this.date.printDate();
-        System.out.println("User Name: " + userName);
+        System.out.println("User Name: " + userName.getName());
         System.out.println("Order Status: " + orderStatus);
         this.shippingAddress.printAddressDetails();
         this.billingAddress.printAddressDetails();
         System.out.println("Order Price: $" + orderPrice);
     }
 
-    public double calculatePrice(String subscription) {
+    public double calculatePrice(Subscription subscription) {
         double totalPrice = 0.0;
 
         for (CartItem item : items) {
             totalPrice += item.getTotalPrice();
         }
 
-        if (subscription == "gold") {
-            totalPrice *= 0.15; // 15% discount for prime members
-        } else if (subscription == "platinum") {
-            totalPrice *= 0.10; // 10% discount for platinum members
-        } else if (subscription == "silver") {
-            totalPrice *= 0.05; // 5% discount for silver members
-        } 
+        totalPrice = subscription.applyDiscount(totalPrice);
 
         return totalPrice;
     }
