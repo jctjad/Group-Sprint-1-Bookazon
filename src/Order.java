@@ -38,7 +38,7 @@ public class Order {
     public void printOrderDetails() {
         System.out.println("Order Details:");
         this.date.printDate();
-        System.out.println("User Name: " + userName);
+        System.out.println("User Name: " + userName.getName());
         System.out.println("Order Status: " + orderStatus);
         this.shippingAddress.printAddressDetails();
         this.billingAddress.printAddressDetails();
