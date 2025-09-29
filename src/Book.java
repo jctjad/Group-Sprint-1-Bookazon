@@ -13,4 +13,7 @@ public abstract class Book extends Media {
         System.out.println("Year Published: " + getYearPublished());
         System.out.println("Price: $" + getPrice());
     }
+
+    public abstract void printFormat();
+
 }
