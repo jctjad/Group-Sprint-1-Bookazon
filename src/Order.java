@@ -56,4 +56,14 @@ public class Order {
 
         return totalPrice;
     }
+
+    public double getTotalPrice(){
+        double totalPrice = 0.0;
+
+        for (CartItem item : items) {
+            totalPrice += item.getTotalPrice();
+        }
+
+        return totalPrice;
+    }
 }
