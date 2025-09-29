@@ -6,6 +6,7 @@ public class Book {
     private boolean isPaperback;  // true if the book is paperback, false if it is hardcover
 
     //push test - Cole
+    //test 2
 
     public Book(String title, String author, int yearPublished, double price, boolean isPaperback) {
         this.title = title;
