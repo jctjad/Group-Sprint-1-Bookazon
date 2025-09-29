@@ -46,12 +46,7 @@ public class Order {
     }
 
     public double calculatePrice(Subscription subscription) {
-        double totalPrice = 0.0;
-
-        for (CartItem item : items) {
-            totalPrice += item.getTotalPrice();
-        }
-
+        double totalPrice = this.getTotalPrice();
         totalPrice = subscription.applyDiscount(totalPrice);
 
         return totalPrice;
