@@ -38,11 +38,7 @@ public class Bookazon {
     public void removeUser(User user) {
         users.remove(user);
     }
-
-    public void updateRole(User user, String role) {
-        user.setSubscription(role);
-    }
-
+    
     
     public static void main(String[] args) {
         
