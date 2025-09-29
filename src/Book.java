@@ -60,6 +60,14 @@ public class Book {
         System.out.println("Price: $" + price);
     }
 
+    public void updateBookDetails(String newTitle, String newAuthor, int newYearPublished, double newPrice, boolean isPaperback) {
+        setTitle(newTitle);
+        setAuthor(newAuthor);
+        setYearPublished(newYearPublished);
+        setPrice(newPrice);
+        setPaperback(isPaperback);
+    }
+
     public boolean isPriceValid() {
         return price > 0;
     }
