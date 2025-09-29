@@ -1,4 +1,4 @@
-public SilverSubscription implements Subscription {
+public class SilverSubscription implements Subscription {
     
     @Override
     public double applyDiscount(double price) {
