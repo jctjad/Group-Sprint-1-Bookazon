@@ -1,8 +1,8 @@
 public abstract class Media {
-    private String title;
-    private String author;
-    private int yearPublished;
-    private double price;
+    protected String title;
+    protected String author;
+    protected int yearPublished;
+    protected double price;
 
     public String getTitle() {
         return title;
