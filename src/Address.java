@@ -5,6 +5,11 @@ public class Address {
     private String addressState;
     private String addressZip;
     private String addressCountry;
+    private String addressType;
+
+    public Address(String addressType){
+        this.addressType = addressType;
+    }
 
     public void setAddress(String line1, String line2, String city, String state, String zip, String country){
         this.addressLine1 = line1;
@@ -16,7 +21,7 @@ public class Address {
     }
 
     public void printAddressDetails(){
-        System.out.println("Shipping Address: " + addressLine1 + ", " + addressLine2 + ", " + addressCity + ", " 
+        System.out.println(addressType + " Address: " + addressLine1 + ", " + addressLine2 + ", " + addressCity + ", " 
                             + addressState + ", " + addressZip + ", " + addressCountry);
     }
     

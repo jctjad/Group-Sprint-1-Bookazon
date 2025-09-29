@@ -4,8 +4,8 @@ public class Order {
     private OrderDate date = new OrderDate();
     private String userName;
     private String orderStatus;
-    private Address shippingAddress = new Address();
-    private Address billingAddress = new Address();
+    private Address shippingAddress = new Address("Shipping");
+    private Address billingAddress = new Address("Billing");
     private ArrayList<CartItem> items;
     private double orderPrice;
 
