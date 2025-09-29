@@ -3,12 +3,14 @@ public abstract class Media {
     protected String author;
     protected int yearPublished;
     protected double price;
+    protected MediaFormat format;
 
-    public Media(String title, String author, int yearPublished, double price) {
+    public Media(String title, String author, int yearPublished, double price, MediaFormat format) {
         this.title = title;
         this.author = author;
         this.yearPublished = yearPublished;
         this.price = price;
+        this.format = format;
     }
 
     public String getTitle() {
@@ -41,6 +43,14 @@ public abstract class Media {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public MediaFormat getFormat() { 
+        return format; 
+    }
+    
+    protected void setFormat(MediaFormat format) { 
+        this.format = format; 
     }
 
     public boolean isPriceValid() {
