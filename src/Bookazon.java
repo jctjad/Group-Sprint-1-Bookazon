@@ -3,25 +3,25 @@ import java.util.ArrayList;
 
 public class Bookazon {
 
-    private ArrayList<Book> books;
+    private ArrayList<Media> media;
     private ArrayList<User> users;
 
     public Bookazon() {
-        books = new ArrayList<>();
+        media = new ArrayList<>();
         users = new ArrayList<>();
     }
 
-    public void addBook(Book book) {
-        books.add(book);
+    public void addMedia(Media m) {   
+        media.add(m);
     }
 
     public void addUser(User user) {
         users.add(user);
     }
 
-    public void viewBooks() {
-        for (Book book : books) {
-            book.printDetails();
+    public void viewMedia() {         
+        for (Media m : media) {
+            m.printDetails();         
             System.out.println("-------------------");
         }
     }
@@ -32,8 +32,8 @@ public class Bookazon {
         }
     }
 
-    public void removeBook(Book book) {
-        books.remove(book);
+    public void removeMedia(Media m) {
+        media.remove(m);
     }
 
     public void removeUser(User user) {
@@ -46,10 +46,10 @@ public class Bookazon {
         Bookazon bookazon = new Bookazon();
         
         // create books
-        bookazon.addBook(new Paperback("The Great Gatsby", "F. Scott Fitzgerald", 1925, 9.99));
-        bookazon.addBook(new EBook("To Kill a Mockingbird", "Harper Lee", 1960, 7.99));
-        bookazon.addBook(new Audiobook("1984", "George Orwell", 1949, 8.99));
-        // add the dvd here
+        bookazon.addMedia(new Paperback("The Great Gatsby", "F. Scott Fitzgerald", 1925, 9.99));
+        bookazon.addMedia(new EBook("To Kill a Mockingbird", "Harper Lee", 1960, 7.99));
+        bookazon.addMedia(new Audiobook("1984", "George Orwell", 1949, 8.99));
+        bookazon.addMedia(new DvD("Inception", "Christopher Nolan", 2010, 14.99));
 
         // create users
         User alice = new User("Alice", new NormalSubscription());
@@ -60,10 +60,10 @@ public class Bookazon {
 
         // add books to cart
         Cart aliceCart = new Cart();
-        aliceCart.addItem(new CartItem(bookazon.books.get(0).getTitle(),
-                                       bookazon.books.get(0).getPrice(), 1));
-        aliceCart.addItem(new CartItem(bookazon.books.get(1).getTitle(),
-                                       bookazon.books.get(1).getPrice(), 2));
+        aliceCart.addItem(new CartItem(bookazon.media.get(0).getTitle(),
+                                       bookazon.media.get(0).getPrice(), 1));
+        aliceCart.addItem(new CartItem(bookazon.media.get(1).getTitle(),
+                                       bookazon.media.get(1).getPrice(), 2));
 
         // view cart
         aliceCart.viewCartDetails();
@@ -77,16 +77,12 @@ public class Bookazon {
         aliceOrder.setOrderStatus("Processing");
         aliceOrder.setDateCreated("2025-09-27");
 
-        // checkout
-        // bookazon.users.get(0).checkout();
-        // currently we do not have a checkout method in Order
-
         // view order details
         aliceOrder.printOrderDetails();
 
-        // 8. Print all books and users
-        System.out.println("\nAvailable Books:");
-        bookazon.viewBooks();
+        // print all books and users
+        System.out.println("\nAvailable Media:");
+        bookazon.viewMedia();
 
         System.out.println("\nUsers:");
         bookazon.viewUsers();
