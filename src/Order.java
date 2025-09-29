@@ -35,10 +35,6 @@ public class Order {
         this.date.setDateShipped(date);
     }
 
-    public void setUserName(String name) {
-        this.userName = name;
-    }
-
     public void printOrderDetails() {
         System.out.println("Order Details:");
         this.date.printDate();
@@ -57,7 +53,7 @@ public class Order {
         }
 
         totalPrice = subscription.applyDiscount(totalPrice);
-        
+
         return totalPrice;
     }
 }
