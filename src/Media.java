@@ -68,4 +68,9 @@ public abstract class Media {
     public boolean isYearPublishedValid() {
         return yearPublished > 0;
     }
+
+    public void printDetails() {
+        System.out.println(format + ": " + title + " by " + author +
+                           " (" + yearPublished + "), $" + price);
+    }
 }
