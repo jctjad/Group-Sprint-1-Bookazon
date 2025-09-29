@@ -5,10 +5,9 @@ public class User {
     private Subscription subscription;
     private Address address;
 
-    public User(String name, Subscription subscription, Address address) {
+    public User(String name, Subscription subscription) {
         this.name = name;
         this.subscription = subscription;  // normal, gold, platinum, silver membership
-        this.address = address;
     }
 
     public String getName() {
@@ -21,9 +20,5 @@ public class User {
 
     public void setSubscription(Subscription subscription) {
         this.subscription = subscription;
-    }
-
-    public Address getAddress() {
-        return address;
     }
 }
