@@ -62,4 +62,11 @@ public class Order {
 
         return totalPrice;
     }
+
+    public double getAmountSaved(){
+        double totalPrice = this.getOrderTotalPrice();
+        double totalSaved = totalPrice - this.orderPrice;
+        
+        return totalSaved;
+    }
 }
