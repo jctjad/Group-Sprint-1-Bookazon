@@ -14,6 +14,7 @@ public class Order {
         this.items = cart.getItems();
         this.userName = userName;
         this.orderPrice = calculatePrice(userName.getSubscription());
+        this.amountSaved = getAmountSaved();
     }
 
     public void setShippingAddress(String line1, String line2, String city, String state, String zip, String country) {
