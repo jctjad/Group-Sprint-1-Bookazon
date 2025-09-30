@@ -8,11 +8,13 @@ public class Order {
     private Address billingAddress = new Address("Billing");
     private ArrayList<CartItem> items;
     private double orderPrice;
+    private double amountSaved;
 
     public Order(Cart cart, User userName) {
         this.items = cart.getItems();
         this.userName = userName;
         this.orderPrice = calculatePrice(userName.getSubscription());
+        this.amountSaved = getAmountSaved();
     }
 
     public void setShippingAddress(String line1, String line2, String city, String state, String zip, String country) {
@@ -43,6 +45,7 @@ public class Order {
         this.shippingAddress.printAddressDetails();
         this.billingAddress.printAddressDetails();
         System.out.println("Order Price: $" + orderPrice);
+        System.out.println("Amount Saved: $" + amountSaved);
     }
 
     public double calculatePrice(Subscription subscription) {
@@ -60,5 +63,12 @@ public class Order {
         }
 
         return totalPrice;
+    }
+
+    public double getAmountSaved(){
+        double totalPrice = this.getOrderTotalPrice();
+        double totalSaved = totalPrice - this.orderPrice;
+        
+        return totalSaved;
     }
 }
