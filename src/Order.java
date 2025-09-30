@@ -45,6 +45,7 @@ public class Order {
         this.shippingAddress.printAddressDetails();
         this.billingAddress.printAddressDetails();
         System.out.println("Order Price: $" + orderPrice);
+        System.out.println("Amount Saved: $" + amountSaved);
     }
 
     public double calculatePrice(Subscription subscription) {
