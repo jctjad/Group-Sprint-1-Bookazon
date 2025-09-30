@@ -1,9 +1,6 @@
-import java.util.ArrayList;
-
 public class User {
     private String name;
     private Subscription subscription;
-    private Address address;
 
     public User(String name, Subscription subscription) {
         this.name = name;
