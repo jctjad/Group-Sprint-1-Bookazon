@@ -8,6 +8,7 @@ public class Order {
     private Address billingAddress = new Address("Billing");
     private ArrayList<CartItem> items;
     private double orderPrice;
+    private double amountSaved;
 
     public Order(Cart cart, User userName) {
         this.items = cart.getItems();
