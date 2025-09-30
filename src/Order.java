@@ -46,13 +46,13 @@ public class Order {
     }
 
     public double calculatePrice(Subscription subscription) {
-        double totalPrice = this.getTotalPrice();
+        double totalPrice = this.getOrderTotalPrice();
         totalPrice = subscription.applyDiscount(totalPrice);
 
         return totalPrice;
     }
 
-    public double getTotalPrice(){
+    public double getOrderTotalPrice(){
         double totalPrice = 0.0;
 
         for (CartItem item : items) {
